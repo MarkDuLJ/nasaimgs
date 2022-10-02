@@ -5,6 +5,9 @@ import {ApolloServerPluginDrainHttpServer, ApolloServerPluginLandingPageLocalDef
 
 import {typeDefs,resolvers} from './types/index.js'
 
+// todo: define env port
+const port=4000
+
 const startApolloServer= async()=>{
     const app=express()
 
@@ -21,4 +24,17 @@ const startApolloServer= async()=>{
         ]
     })
 
+    await server.start()
+
+    server.applyMiddleware({
+        app,
+        path:'/igraphql'
+    })
+
+    await new Promise(resolve=>httpServer.listen({port},resolve))
+
+    console.log(`Server is running at http://localhost:${port}${server.graphqlPath}`)
+
 }
+
+startApolloServer(typeDefs,resolvers)
