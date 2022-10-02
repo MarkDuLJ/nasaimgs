@@ -22,7 +22,7 @@ export default async (root, args, context, info) => {
             if(collection&&collection.items?.length>0){
                 //todo: deal items.length<100 when last page
                 imgList=collection.items.map(item=>({
-                    href:item.links?item.links[0]:"",
+                    href:item.links?item.links[0].href:"",
                     title: item.data ? item.data[0].title:"",
                     description: item.data ? item.data[0].description :"",
                 }))
