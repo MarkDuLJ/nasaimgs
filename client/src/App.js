@@ -3,12 +3,13 @@ import React,{useState} from 'react'
 
 import './App.css';
 import SearchBar from './components/SearchBar';
-import List from './components/list/List';
+import ListContainer from './components/listcontainer/ListContainer';
 /* 
   todos:
   1, decorate whole pages
   2, create client side pagination because 100 items is huge
   3, truncate description because of length
+  4, server side pagination need to determin first page and last page
 
 */
 
@@ -21,7 +22,7 @@ function App() {
     <div>
       <h2>Hello</h2>
       <SearchBar query={query} onChange={setQuery} />
-      <List query={query} />
+      <ListContainer query={query} />
 
     </div>
   );
