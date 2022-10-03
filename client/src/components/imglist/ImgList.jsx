@@ -1,12 +1,13 @@
 import React from 'react'
 import "./ImgList.css";
 const ImgList = ({imgList}) => {
+  // todo:long description truncate
   return (
     <div className="grid-container">
       {imgList.map(({ title, description, href }, i) => (
         <div key={i}>
           <h3>{title}</h3>
-          <h3>{i}</h3>
+          {/* <h3>{i}</h3> */}
           <img
             width="400"
             height="250"

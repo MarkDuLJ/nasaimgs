@@ -21,9 +21,13 @@ const ListContainer = ({ query }) => {
 
   return (
     <>
-      <FetchNav setPage={setPage} page={page} />
-      <PaginationList imgList={imgList}/>
-      {/* <ImgList imgList={imgList} /> */}
+     <div style={{ dispaly: "flex", justifyContent: "center" }}>
+        <FetchNav setPage={setPage} page={page} />
+     </div>
+      {imgList.length>10?
+        <PaginationList imgList={imgList}/>:
+        <ImgList imgList={imgList} />
+      } 
     </>
   );
 };

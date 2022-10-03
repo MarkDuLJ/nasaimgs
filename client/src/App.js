@@ -20,8 +20,10 @@ function App() {
 
   return (
     <div>
-      <h2>Hello</h2>
-      <SearchBar query={query} onChange={setQuery} />
+      <div style={{display:"flex", justifyContent:"center"}}><h2>Brigit Takeout Challenge</h2></div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <SearchBar query={query} onChange={setQuery} />
+      </div>
       <ListContainer query={query} />
 
     </div>
